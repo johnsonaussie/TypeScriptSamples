@@ -11,5 +11,7 @@ For best results, scroll the window using the scrollbar.
 ## Running
 
 npm install
+
 tsc
+
 open parallax.html
