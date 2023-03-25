@@ -9,7 +9,7 @@ Simple use of classes and inheritance:
 
 ## Running 
 
-`tsc --sourcemap animals.ts`
+`tsc --sourcemap .\simple\animals.ts`
 ## after the command above it will create a animals.js file
 ## you can run js file like below
 `C:\Program Files\nodejs\node.exe .\simple\animals.js`
