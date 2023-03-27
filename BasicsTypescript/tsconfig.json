@@ -104,6 +104,12 @@
     "node_modules"
   ],
   "include": [
-    "src/decoratorsDemo.ts"
+    //"src/decoratorsDemo.ts",
+    "src/classDemo.ts",
+    "src/advancedDemo.ts",
+    "src/genericsDemo.ts",
+    "src/interfaceDemo.ts"
+    //"src/main.ts",
+    //"src/index.ts"
   ],
 }
