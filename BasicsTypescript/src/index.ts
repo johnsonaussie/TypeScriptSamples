@@ -233,7 +233,7 @@ class CreateRoom
         this.family.push(member);
     }
     showFamily(){
-        console.log(this.family);
+        console.log("Show Family:",this.family);
     }
     cleanRoom(soap: string){
         console.log(`Cleaning ${this.room} with ${soap}`);
@@ -252,4 +252,6 @@ shikha.dobShikha;
 nabendu.addFamilyMember('Nabendu');
 shikha.addFamilyMember('Shikha');
 hriday.addFamilyMember('Hriday');
+mousam.addFamilyMember("johnson");
 mousam.cleanRoom('Lizol');
+mousam.showFamily();
