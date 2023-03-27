@@ -1,5 +1,7 @@
 "use strict";
 //Built-in Types
+// There are three sets of literal字面 types available in TypeScript today: strings, numbers, and booleans; 
+// by using literal types you can allow an exact value which a string, number, or boolean must have.
 //Numbers
 let myNum = 10;
 let anotherNum = 20;
@@ -139,6 +141,17 @@ const person3 = {
     isDev: true
 };
 const person4 = 'Nabendu';
+const cat = {
+    foot: 4,
+    name: 'cat',
+    body: 'medium'
+};
+const dog = {
+    name: 'dog',
+    foot: 4,
+    body: 'small'
+};
+console.log("dog.body:", dog.body);
 const coder1 = [
     { name: 'Nabendu', category: 'frontend', age: 40 },
     { name: 'Mousam', category: 'backend', age: 39 },
