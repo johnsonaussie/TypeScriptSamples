@@ -19,7 +19,7 @@ let anotherStr = 'World';
 //Boolean
 let myBool = true;
 let anotherBool = false;
-myBool = 'true';
+// myBool = 'true'; //error Type 'string' is not assignable to type 'boolean'.
 // Type 'number' is not assignable to type 'boolean'.
 //anotherBool = 76;
 //Inference
@@ -66,7 +66,7 @@ arrOfArrays.push([21, 32, 13]);
 const addNums = (num1, num2) => {
     return num1 + num2;
 };
-addNums(10, 20);
+console.log("addnumber", addNums(10, 20)); //30
 console.log("addnumber", addNums(10, '20')); //1020
 const multiNums = (num1, num2) => {
     return num1 * num2;
@@ -81,10 +81,10 @@ const modNums = (num1, num2) => {
 modNums(10, 20);
 //modNums(10, '20'); error
 const printSum = (num1, num2) => {
-    console.log(num1 + num2);
+    console.log("printsum:", num1 + num2);
 };
 printSum(10, 20);
-//printSum(10, '20'); error
+printSum(10, '20');
 //Union types
 // Occasionally, you’ll run into a library that expects a parameter to be either a number or a string. 
 // so you use union type 
@@ -166,9 +166,10 @@ const shikha = new CreateRoom('Shikha');
 const hriday = new CreateRoom('Hriday');
 const mousam = new CreateRoom('Mousam');
 shikha.dobShikha;
-shikha.dobShikha = '1982-11-12';
-hriday.dobHriday;
-nabendu.family;
+// read only property
+//shikha.dobShikha = '1982-11-12'; //error
+//hriday.dobHriday; // error private
+//nabendu.family; // error private
 nabendu.addFamilyMember('Nabendu');
 shikha.addFamilyMember('Shikha');
 hriday.addFamilyMember('Hriday');

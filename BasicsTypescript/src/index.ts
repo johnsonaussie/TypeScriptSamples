@@ -83,11 +83,11 @@ const arrOfArrays: number[][] = [
 arrOfArrays.push([21, 32, 13]);
 
 //Functions num1 & num2 belong to any "type"
-const addNums = (num1, num2) => {
+const addNums = (num1:any, num2:any) => {
     return num1 + num2;
 }
 
-addNums(10, 20);
+console.log("addnumber" , addNums(10, 20)); //30
 console.log("addnumber" , addNums(10, '20')); //1020
 
 const multiNums = (num1: number, num2: number) => {
@@ -106,12 +106,12 @@ const modNums = (num1: number, num2: number): number => {
 modNums(10, 20);
 //modNums(10, '20'); error
 
-const printSum = (num1: number, num2: number): void => {
-    console.log(num1 + num2);
+const printSum = (num1: any, num2: any): void => {
+    console.log("printsum:",num1 + num2);
 }
 
 printSum(10, 20);
-//printSum(10, '20'); error
+printSum(10, '20'); 
 
 //Union types
 // Occasionally, you’ll run into a library that expects a parameter to be either a number or a string. 
@@ -203,7 +203,8 @@ const coder1: CoderType = [
 ]
 
 //Classes
-class CreateRoom{
+class CreateRoom
+{
     private family: string[] = [];
     readonly dobShikha: string = '1982-12-12';
     private readonly dobHriday: string = '2013-12-12';
@@ -225,9 +226,10 @@ const shikha = new CreateRoom('Shikha');
 const hriday = new CreateRoom('Hriday');
 const mousam = new CreateRoom('Mousam');
 shikha.dobShikha;
-shikha.dobShikha = '1982-11-12';
-hriday.dobHriday;
-nabendu.family;
+// read only property
+//shikha.dobShikha = '1982-11-12'; //error
+//hriday.dobHriday; // error private
+//nabendu.family; // error private
 nabendu.addFamilyMember('Nabendu');
 shikha.addFamilyMember('Shikha');
 hriday.addFamilyMember('Hriday');
