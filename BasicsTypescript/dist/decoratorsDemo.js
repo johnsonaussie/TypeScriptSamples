@@ -5,6 +5,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
@@ -23,39 +26,41 @@ function AngularTemplate(template, hookId) {
     };
 }
 // @Helper('Showing constructor:')
+// change "emitDecoratorMetadata" to true in tsconfig.json file
 let Car = class Car {
     constructor() {
-        this.name = 'Tata Nexon';
+        this.name = 'Tata Nexon of Johnson TONG';
         console.log(`Car ${this.name} created`);
     }
 };
 Car = __decorate([
-    AngularTemplate('<h4>This is a Angular like Template code</h4>', 'app')
+    AngularTemplate('<h4>This is a Angular like Template code</h4>', 'app'),
+    __metadata("design:paramtypes", [])
 ], Car);
 const car1 = new Car();
 console.log(car1);
 //Property Decorators
 function Log(target, propertyName) {
-    console.log('Property decorator!');
+    console.log('From Log:Property decorator!');
     console.log(target, propertyName);
 }
 function Log2(target, name, descriptor) {
-    console.log('Accessor decorator!');
-    console.log(target);
-    console.log(name);
-    console.log(descriptor);
+    console.log('From Log2:Accessor decorator!');
+    console.log("target:", target);
+    console.log("name:", name);
+    console.log("PropertyDescriptor:", descriptor);
 }
 function Log3(target, name, descriptor) {
-    console.log('Method decorator!');
-    console.log(target);
-    console.log(name);
-    console.log(descriptor);
+    console.log('From Log3:Method decorator!');
+    console.log("target:", target);
+    console.log("name:", name);
+    console.log("PropertyDescriptor:", descriptor);
 }
 function Log4(target, name, position) {
-    console.log('Parameter decorator!');
-    console.log(target);
-    console.log(name);
-    console.log(position);
+    console.log('From Log4: Parameter decorator!');
+    console.log("target:", target);
+    console.log("name:", name);
+    console.log("position:", position);
 }
 class Employee {
     set fullName(name) {
@@ -70,12 +75,20 @@ class Employee {
     }
 }
 __decorate([
-    Log
+    Log,
+    __metadata("design:type", String)
 ], Employee.prototype, "title", void 0);
 __decorate([
-    Log2
+    Log2,
+    __metadata("design:type", String),
+    __metadata("design:paramtypes", [String])
 ], Employee.prototype, "fullName", null);
 __decorate([
     Log3,
-    __param(0, Log4)
+    __param(0, Log4),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number]),
+    __metadata("design:returntype", void 0)
 ], Employee.prototype, "getNameWithTitle", null);
+const emp2 = new Employee("CEO", "Johnson TOnG");
+console.log("getNameWithTitle:", emp2.getNameWithTitle(2));
