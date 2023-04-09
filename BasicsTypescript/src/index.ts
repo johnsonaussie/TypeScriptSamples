@@ -1,11 +1,14 @@
 //Built-in Types
 // There are three sets of literal字面 types available in TypeScript today: strings, numbers, and booleans; 
 // by using literal types you can allow an exact value which a string, number, or boolean must have.
+
 //Numbers
-let myNum = 10;
+
+let myNum12 = 10;
+
 let anotherNum: number = 20;
 
-myNum = 12;
+myNum12 = 12;
 // below is wrong type string is not assignable to type number
 //myNum = '12';
 
