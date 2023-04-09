@@ -27,6 +27,7 @@ function AngularTemplate(template, hookId) {
 }
 // @Helper('Showing constructor:')
 // change "emitDecoratorMetadata" to true in tsconfig.json file
+// hooId is app a div with id of 'app'
 let Car = class Car {
     constructor() {
         this.name = 'Tata Nexon of Johnson TONG';
