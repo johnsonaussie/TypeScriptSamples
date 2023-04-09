@@ -189,3 +189,29 @@ hriday.addFamilyMember('Hriday');
 mousam.addFamilyMember("johnson");
 mousam.cleanRoom('Lizol');
 mousam.showFamily();
+//Tuples a tuple is a special type of array with fixed size & known datatype at each index.
+// they are stricter than regular type.
+let options1;
+options1 = ["johnson", 1];
+options1.push('joffee', 2);
+console.log(options1);
+console.log(options1[0]);
+console.log(options1[1]);
+console.log(options1[0][0]);
+console.log(options1[0][3]);
+console.log("options length:", options1.length); //4
+console.log(options1[0][6]);
+options1.forEach(function (value) { console.log("options value in foreach:", value); });
+options1.forEach(value => console.log("value in lambda:", value));
+console.log("options index of joffee:", options1.lastIndexOf("joffee")); //2
+//console.log(options1[2]); //error
+//console.log(options1[1][0]);
+var employee = [1, "Steve"];
+var person6 = [1, "Steve", true];
+var employees;
+employees = [[1, "Steve"], [2, "Bill"], [3, "Jeff"]];
+employees.push([4, 'jimmy']);
+console.log(employees);
+console.log(employees[2]);
+let greeting = () => { console.log("Hello TypeScript!"); };
+greeting();
