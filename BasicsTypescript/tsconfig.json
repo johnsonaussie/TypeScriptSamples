@@ -112,6 +112,6 @@
     "src/genericsDemo.ts",
     "src/interfaceDemo.ts"   
   ],*/
-  "include": ["src/FSandPath.ts"]
+  "include": ["src/MyClassDecorator.ts"]
 }
 
