@@ -34,10 +34,13 @@
     // "rootDirs": [],                                   /* Allow multiple folders to be treated as one when resolving modules. */
     // "typeRoots": [],                                  /* Specify multiple folders that act like './node_modules/@types'. */
     "typeRoots": [
-      "node_modules/@types",
-      "node_modules/@types/node"
+      "node_modules/@types"      
     ],
-    // "types": [],                                      /* Specify type package names to be included without being referenced in a source file. */
+    "types": [
+      "node",
+      "node/fs",
+      "node/path"
+    ],                                      /* Specify type package names to be included without being referenced in a source file. */
     // "allowUmdGlobalAccess": true,                     /* Allow accessing UMD globals from modules. */
     // "moduleSuffixes": [],                             /* List of file name suffixes to search when resolving a module. */
     // "resolveJsonModule": true,                        /* Enable importing .json files. */
@@ -115,6 +118,8 @@
   "include": [
     "src/DecoratorSample.ts",
     "src/decoratorsDemo.ts",
-    "src/RefletionSample.ts"]
+    "src/RefletionSample.ts",
+    "src/FSandPath.ts"
+  ]
 }
 
