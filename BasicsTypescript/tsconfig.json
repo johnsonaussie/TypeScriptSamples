@@ -114,6 +114,7 @@
   ],*/
   "include": [
     "src/DecoratorSample.ts",
-    "src/decoratorsDemo.ts"]
+    "src/decoratorsDemo.ts",
+    "src/RefletionSample.ts"]
 }
 

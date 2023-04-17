@@ -43,7 +43,7 @@ console.log(car1);
 //Property Decorators
 function Log(target, propertyName) {
     console.log('From Log:Property decorator!');
-    console.log("propertyName", propertyName);
+    console.log("propertyName", propertyName); //title
     console.log("target:", target);
 }
 function Log2(target, name, descriptor) {
