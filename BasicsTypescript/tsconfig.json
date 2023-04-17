@@ -112,6 +112,8 @@
     "src/genericsDemo.ts",
     "src/interfaceDemo.ts"   
   ],*/
-  "include": ["src/DecoratorSample.ts"]
+  "include": [
+    "src/DecoratorSample.ts",
+    "src/decoratorsDemo.ts"]
 }
 

@@ -36,13 +36,14 @@ console.log(car1)
 function Log(target: any, propertyName: string | Symbol) 
 {
     console.log('From Log:Property decorator!');
-    console.log(target, propertyName);
+    console.log("propertyName", propertyName);//title
+    console.log("target:",target);
 }
 
 function Log2(target: any, name: string, descriptor: PropertyDescriptor) {
     console.log('From Log2:Accessor decorator!');
     console.log("target:",target);
-    console.log("name:",name);
+    console.log("name:",name);//fullname
     console.log("PropertyDescriptor:",descriptor);
 }
 
@@ -50,15 +51,21 @@ function Log3( target: any, name: string | Symbol, descriptor: PropertyDescripto
 {
     console.log('From Log3:Method decorator!');
     console.log("target:",target);
-    console.log("name:",name);
-    console.log("PropertyDescriptor:",descriptor);
+    // target: Object
+    // > constructor: class Employee
+    // > getNameWithTitle
+    // > set fullName
+    // [[Prototype]]:Object
+
+    console.log("name:",name);//fullname
+    console.log("PropertyDescriptor:",descriptor);//Object ==> configurable: true, enumerable:false set f fullName(name)
 }
 
 function Log4(target: any, name: string | Symbol, position: number) {
     console.log('From Log4: Parameter decorator!');
     console.log("target:",target);
-    console.log("name:",name);
-    console.log("position:",position);
+    console.log("name:",name);// getNameWithTitle
+    console.log("position:",position);//0
 }
 
 class Employee
