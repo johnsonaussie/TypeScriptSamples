@@ -47,7 +47,7 @@ function Log2(target: any, name: string, descriptor: PropertyDescriptor) {
 }
 
 function Log3( target: any, name: string | Symbol, descriptor: PropertyDescriptor)
- {
+{
     console.log('From Log3:Method decorator!');
     console.log("target:",target);
     console.log("name:",name);
