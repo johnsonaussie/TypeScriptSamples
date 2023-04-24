@@ -1,5 +1,4 @@
 "use strict";
-// ==== getFields method starts here ====
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -9,6 +8,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
+// ==== getFields method starts here ====
+// npm install reflect-metadata -D
+require("reflect-metadata");
 const FIELDS = Symbol("fields");
 function field(columnType) {
     function createDecoratorFunction(table, fieldName) {
@@ -39,3 +42,51 @@ console.log(JSON.stringify(getFields(Table), undefined, "  "));
 //    { fieldName:"lastName", columnType:"VARCHAR(30)"},
 //    { fieldName:"dob",      columnType:"TIMESTAMP"}
 // ]
+function validate(target, propertyKey, descriptor) {
+    let set = descriptor.set;
+    descriptor.set = function (value) {
+        let type = Reflect.getMetadata("design:type", target, propertyKey);
+        if (!(value instanceof type)) {
+            throw new TypeError(`Invalid type, got ${typeof value} not ${type.name}.`);
+        }
+        set.call(this, value);
+    };
+}
+class Point {
+    constructor(x, y) {
+        this.x = x;
+        this.y = y;
+    }
+}
+class Line {
+    constructor() {
+        this._start = new Point(0, 0);
+        this._end = new Point(0, 0);
+    }
+    set start(value) {
+        this._start = value;
+    }
+    get start() {
+        return this._start;
+    }
+    set end(value) {
+        this._end = value;
+    }
+    get end() {
+        return this._end;
+    }
+}
+__decorate([
+    validate,
+    __metadata("design:type", Point),
+    __metadata("design:paramtypes", [Point])
+], Line.prototype, "start", null);
+__decorate([
+    validate,
+    __metadata("design:type", Point),
+    __metadata("design:paramtypes", [Point])
+], Line.prototype, "end", null);
+const line = new Line();
+//line.start = new Point(1, 1);
+line.end = new Point(2, 2);
+console.log("line start:", line.start);
