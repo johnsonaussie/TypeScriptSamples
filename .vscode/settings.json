@@ -23,5 +23,6 @@
         "somestring",
         "tsbuildinfo",
         "zicode"
-    ]
+    ],
+    "cSpell.enabled": false
 }
