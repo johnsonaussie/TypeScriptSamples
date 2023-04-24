@@ -16,3 +16,5 @@ desktop.ini
 package-lock.json
 .history
 .env
+dist
+dist/**/*
