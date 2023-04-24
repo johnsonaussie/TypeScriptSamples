@@ -1,5 +1,5 @@
 //import.meta.vitest;
-import { it } from "vitest";
+import { it, test, expect } from "vitest";
 const db = {
     users: [
         {
@@ -26,6 +26,10 @@ it("Should only let you get a user by id with a user id", () => {
     // should have eror here @ts-expect-error
     getUserById(postId);
 });
+it("should not get user from function with id=2", () => {
+    const myuserid = "2";
+    expect(getUserById(myuserid)).toBeDefined();
+});
 it("Should only let you get a post by id with a PostId", () => {
     const userId = "2";
     //should have error here  @ts-expect-error
@@ -38,4 +42,10 @@ console.log("getUserById:3", getUserById(userid1));
 console.log("getPostId:4", getPostById(postid2));
 console.log("getUserById:1", getUserById(userid2)); //{ id: '1', name: 'Miles' }
 // below code: Type '"PostId"' is not assignable to type '"UserId"'.
-//getUserById(postid2);
+getUserById(postid2);
+it('should test if this function succeeds', () => {
+    expect("1").equals(13);
+});
+test('if this function succeeds in test patern', () => {
+    expect(4).equals("15");
+});
