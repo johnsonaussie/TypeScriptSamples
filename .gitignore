@@ -1,2 +1,15 @@
 node_modules/
 dist/
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+*.swp
+
+pids
+logs
+results
+tmp
