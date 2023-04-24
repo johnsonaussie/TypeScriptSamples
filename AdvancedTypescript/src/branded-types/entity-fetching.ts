@@ -50,11 +50,17 @@ const getPostById = (id: PostId) => {
 
 it("Should only let you get a user by id with a user id", () => {
     const postId = "1" as PostId;
-  
+   
     // should have eror here @ts-expect-error
     getUserById(postId);
+   
 });
-  
+
+it("should not get user from function with id=2",()=>{
+  const myuserid ="2" as UserId;
+  expect(getUserById(myuserid)).toBeDefined();
+});
+
 it("Should only let you get a post by id with a PostId", () => {
     const userId = "2" as UserId;
   
