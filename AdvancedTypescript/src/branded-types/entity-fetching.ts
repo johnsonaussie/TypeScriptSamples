@@ -1,5 +1,5 @@
 //import.meta.vitest;
-import { it } from "vitest";
+import { it, test, expect } from "vitest";
 /*
 declare const brand: unique symbol;
 export type Brand<T, TBrand> = T & { [brand]: TBrand };
@@ -69,4 +69,12 @@ console.log("getUserById:3", getUserById(userid1));
 console.log("getPostId:4", getPostById(postid2));
 console.log("getUserById:1", getUserById(userid2));//{ id: '1', name: 'Miles' }
 // below code: Type '"PostId"' is not assignable to type '"UserId"'.
-//getUserById(postid2);
+getUserById(postid2);
+
+it('should test if this function succeeds', () => {
+  expect("1").equals(13);
+});
+
+test('if this function succeeds in test patern', () => {
+  expect(4).equals("15");
+});
